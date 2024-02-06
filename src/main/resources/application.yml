@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      database: kasi-db
+      host: localhost
+      password: rootpassword
+      port: 27017
+      username: root
+  mvc:
+    path match:
+      matching-strategy: ANT_PATH_MATCHER
