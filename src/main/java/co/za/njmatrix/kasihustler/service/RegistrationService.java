@@ -4,6 +4,8 @@ import co.za.njmatrix.kasihustler.model.entity.Registration;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 public interface RegistrationService {
 
     Mono<Registration> save(Registration registration);
