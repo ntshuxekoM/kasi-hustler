@@ -8,7 +8,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/api/register")
+@RequestMapping("/api/registration")
 @AllArgsConstructor
 public class RegistrationController {
 
@@ -33,5 +33,10 @@ public class RegistrationController {
     @GetMapping("/find-by-email/{email}")
     public Mono<Registration> findByEmail(@RequestParam String email) {
         return registrationService.findByEmailAddress(email);
+    }
+
+    @GetMapping("/find-by-id/{id}")
+    public Mono<Registration> findById(@RequestParam String id) {
+        return registrationService.findById(id);
     }
 }
