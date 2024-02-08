@@ -10,3 +10,6 @@ spring:
   mvc:
     path match:
       matching-strategy: ANT_PATH_MATCHER
+
+server:
+  port: 8090
