@@ -10,6 +10,27 @@ spring:
   mvc:
     path match:
       matching-strategy: ANT_PATH_MATCHER
+  security:
+    oauth2:
+      resource-server:
+        jwt.issuer-uri: http://localhost:8080/auth/realms/kasihusler
+        jwk-set-uri: http://localhost:8080/auth/realms/kasihusler/protocol/openid-connect/certs
+      client:
+        registration:
+          keycloak:
+            client-id: login-app
+            scope: read_data openid
+            issuer-uri: http://localhost:8080/realms/kasihusler
+            user-name-attribute: preferred_username
+
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: kasihusler
+
+spring-doc:
+  swagger-ui:
+    oauth:
+      client-id: login-app
 
 server:
   port: 8090
